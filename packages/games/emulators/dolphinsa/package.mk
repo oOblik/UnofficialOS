@@ -7,10 +7,11 @@ PKG_DEPENDS_TARGET="toolchain libevdev libdrm ffmpeg zlib libpng lzo libusb zstd
 PKG_LONGDESC="Dolphin is a GameCube / Wii emulator, allowing you to play games for these two platforms on PC with improvements. "
 
 case ${DEVICE} in
-  RG552|handheld)
+  RG552|handheld|RK3588)
     PKG_SITE="https://github.com/dolphin-emu/dolphin"
     PKG_URL="${PKG_SITE}.git"
     PKG_VERSION="e4c007e2e1a442dbab620f91ca5f6b9b2b27dd5b"
+    PKG_TOOLCHAIN="cmake"
     PKG_PATCH_DIRS+=" wayland"
   ;;
   *)

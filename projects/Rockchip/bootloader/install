@@ -12,6 +12,11 @@ if [ -n "${PKG_DATAFILE}" -a -n "${PKG_LOADER}" ]; then
     rk356x|rk3399)
       tools/mkimage -n ${PKG_SOC} -T rksd -d ${PKG_DATAFILE}:${PKG_LOADER} -C bzip2 idbloader.img
     ;;
+    rk3588)
+      export CROSS_COMPILE=aarch64-linux-gnu-
+      make BL31=${PKG_BL31} ${PKG_LOADER} u-boot.dtb u-boot.itb
+      tools/mkimage -n ${PKG_SOC} -T rksd -d ${PKG_DATAFILE}:${PKG_LOADER} idbloader.img
+    ;;
     *)
       tools/mkimage -n ${PKG_SOC} -T rksd -d "${PKG_DATAFILE}" -C bzip2 idbloader.img
       cat "${PKG_LOADER}" >> idbloader.img
@@ -29,6 +34,10 @@ case "${PKG_SOC}" in
   rk356x)
     echo "uboot: copy uboot image to ${INSTALL}/usr/share/bootloader..."
     cp -av uboot.img ${INSTALL}/usr/share/bootloader
+  ;;
+  rk3588)
+    echo "uboot: copy u-boot.itb image to ${INSTALL}/usr/share/bootloader..."
+        cp -av u-boot.itb ${INSTALL}/usr/share/bootloader/u-boot.itb
   ;;
   *)
     echo "uboot: build loader image uboot.img at ${PKG_LOAD_ADDR}..."

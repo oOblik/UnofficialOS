@@ -33,6 +33,10 @@ RK3399: RG552
 
 RK3326: RG351P RG351V RG351MP RGB20S
 
+RK3588:
+	DEVICE_ROOT=RK3588 PROJECT=Rockchip DEVICE=RK3588 ARCH=arm ./scripts/build_distro
+	DEVICE_ROOT=RK3588 PROJECT=Rockchip DEVICE=RK3588 ARCH=aarch64 ./scripts/build_distro
+
 handheld:
 	DEVICE_ROOT=handheld PROJECT=PC DEVICE=handheld ARCH=x86_64 ./scripts/build_distro
 

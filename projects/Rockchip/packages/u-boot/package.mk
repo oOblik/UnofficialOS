@@ -25,6 +25,11 @@ case ${DEVICE} in
     PKG_URL="${PKG_SITE}/rk356x-uboot.git"
     PKG_VERSION="62a0e69"
   ;;
+  RK3588)
+    PKG_URL="https://github.com/orangepi-xunlong/u-boot-orangepi.git"
+    PKG_VERSION="6534133f97a8e4fb6db83e58dbde23aec6041ec2"
+    PKG_GIT_CLONE_BRANCH="v2017.09-rk3588"
+  ;;
 esac
 
 PKG_IS_KERNEL_PKG="yes"
@@ -54,7 +59,7 @@ make_target() {
       cp ${PROJECT_DIR}/projects/${PROJECT}/devices/${DEVICE}/u-boot/${UBOOT_CONFIG} configs
     fi
     [ "${BUILD_WITH_DEBUG}" = "yes" ] && PKG_DEBUG=1 || PKG_DEBUG=0
-    if [ "${PKG_SOC}" = "rk356x" ]
+    if [ "${PKG_SOC}" = "rk356x" ] || [ "${PKG_SOC}" = "rk3588" ]
     then
       echo "Making for GPT (${UBOOT_DTB})..."
       sed -i "s|TOOLCHAIN_ARM64=.*|TOOLCHAIN_ARM64=${TOOLCHAIN}/bin|" make.sh

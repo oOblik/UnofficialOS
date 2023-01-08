@@ -25,7 +25,7 @@ LIBRETRO_CORES="2048 81 a5200 atari800 beetle-gba beetle-lynx beetle-ngp beetle-
                 neocd_libretro nestopia np2kai nxengine o2em opera parallel-n64                      \
                 pcsx_rearmed picodrive pokemini potator                                              \
                 ppsspp prboom prosystem puae px68k quasi88 quicknes race reminiscence sameboy        \
-                sameduck scummvm smsplus-gx snes9x snes9x2002 snes9x2005_plus snes9x2010 stella      \
+                sameduck smsplus-gx snes9x snes9x2002 snes9x2005_plus snes9x2010 stella      \
                 stella-2014 swanstation tgbdual TIC-80 tyrquake xrick uae4arm uzem vba-next vbam     \
                 vecx vice yabasanshiro xmil mesen virtualjaguar ecwolf_libretro vitaquake2           \
                 bsnes-mercury-performance duckstation fake08"
@@ -35,15 +35,18 @@ PKG_DEPENDS_TARGET="${PKG_EMUS} ${PKG_RETROARCH} ${LIBRETRO_CORES}"
 ### Emulators or cores for specific devices
 case "${DEVICE}" in
   RG351P|RG351V|RG351MP|RGB20S)
-    PKG_DEPENDS_TARGET+=" common-shaders glsl-shaders drastic"
+    PKG_DEPENDS_TARGET+=" common-shaders glsl-shaders drastic scummvm"
   ;;
   RG552)
-    PKG_DEPENDS_TARGET+=" bsnes-hd duckstationsa dolphinsa dolphin slang-shaders beetle-saturn drastic"
+    PKG_DEPENDS_TARGET+=" bsnes-hd duckstationsa dolphinsa dolphin slang-shaders beetle-saturn drastic scummvm"
   ;;
   RG503|RG353P)
-    PKG_DEPENDS_TARGET+=" duckstationsa common-shaders glsl-shaders drastic dolphinsa"
+    PKG_DEPENDS_TARGET+=" duckstationsa common-shaders glsl-shaders drastic dolphinsa scummvm"
   ;;
   handheld)
-    PKG_DEPENDS_TARGET+=" bsnes-hd duckstationsa dolphinsa dolphin pcsx2sa lrps2 desmume bsnes citra slang-shaders minivmac minivmacsa play beetle-saturn yuzusa primehack citrasa cemu"
+    PKG_DEPENDS_TARGET+=" bsnes-hd duckstationsa dolphinsa dolphin pcsx2sa lrps2 desmume bsnes citra slang-shaders minivmac minivmacsa play beetle-saturn yuzusa primehack citrasa ppsspp scummvm"
+  ;;
+  RK3588)
+    PKG_DEPENDS_TARGET+=" duckstationsa dolphinsa dolphin bsnes slang-shaders beetle-saturn"
   ;;
 esac
