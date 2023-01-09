@@ -301,7 +301,7 @@ then
                         RUNTHIS='${TBASH} /usr/bin/start_primehack.sh "${ROMNAME}"'
                         fi
                 ;;
-                "cemu")
+                "wiiu")
                         jslisten set "-9 cemu"
                         if [ "$EMU" = "cemu" ]; then
                         RUNTHIS='${TBASH} /usr/bin/start_cemu.sh "${ROMNAME}"'
