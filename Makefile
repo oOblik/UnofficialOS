@@ -23,7 +23,7 @@ distclean:
 src-pkg:
 	tar cvJf sources.tar.xz sources .stamps
 
-world: RK3326 RK3566 RK3399 x86_64
+world: RK3326 RK3566 RK3399 RK3588 x86_64
 
 x86_64: handheld
 
