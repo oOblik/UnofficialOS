@@ -2,12 +2,11 @@
 # Copyright (C) 2019-present Shanti Gilbert (https://github.com/shantigilbert)
 # Copyright (C) 2022-present Fewtarius
 PKG_NAME="PPSSPPSDL"
-PKG_VERSION="a120cb9468c2f8d08260dc3187a306e781687fd8"
 PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPLv2"
 PKG_SITE="https://github.com/hrydgard/ppsspp"
-PKG_URL="https://github.com/hrydgard/ppsspp.git"
+PKG_URL="${PKG_SITE}.git"
 PKG_DEPENDS_TARGET="toolchain ffmpeg libzip SDL2 zlib zip"
 PKG_SHORTDESC="PPSSPPDL"
 PKG_LONGDESC="PPSSPP Standalone"
@@ -15,6 +14,15 @@ GET_HANDLER_SUPPORT="git"
 PKG_BUILD_FLAGS="+lto"
 
 PKG_PATCH_DIRS+="${DEVICE}"
+
+case ${DEVICE} in
+  RK3588)
+    PKG_VERSION="40386bca08d33c2d6584d6e7da4efee9bfeb3f96"
+  ;;
+  *)
+    PKG_VERSION="a120cb9468c2f8d08260dc3187a306e781687fd8"
+  ;;
+esac
 
 if [ ! "${OPENGL}" = "no" ]; then
   PKG_DEPENDS_TARGET+=" ${OPENGL} glu libglvnd glew"
