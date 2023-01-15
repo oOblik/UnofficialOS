@@ -19,7 +19,7 @@ PKG_RETROARCH="core-info libretro-database retroarch retroarch-assets retroarch-
 LIBRETRO_CORES="2048 81 a5200 atari800 beetle-gba beetle-lynx beetle-ngp beetle-pce beetle-pce-fast beetle-pcfx      \
                 beetle-supafaust beetle-supergrafx beetle-vb beetle-wswan bluemsx cannonball cap32   \
                 crocods daphne dinothawr dosbox-svn dosbox-pure easyrpg fbalpha2012                  \
-                fbalpha2019 fbneo fceumm fmsx flycast flycast_libretro freechaf freeintv             \
+                fbalpha2019 fbneo fceumm fmsx flycast freechaf freeintv             \
                 freej2me fuse-libretro gambatte gearboy gearcoleco gearsystem genesis-plus-gx        \
                 genesis-plus-gx-wide gme gpsp gw-libretro handy hatari mame2000 mame2003-plus        \
                 mame2010 mame2015 mame melonds meowpc98 mgba mrboom mupen64plus mupen64plus-nx       \
