@@ -20,7 +20,7 @@ case ${DEVICE} in
     PKG_VERSION="40386bca08d33c2d6584d6e7da4efee9bfeb3f96"
   ;;
   *)
-    PKG_VERSION="a120cb9468c2f8d08260dc3187a306e781687fd8"
+    PKG_VERSION="ece6edfe83db1cc45fce5f760db9104440465b8a"
   ;;
 esac
 

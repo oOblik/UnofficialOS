@@ -103,3 +103,9 @@ check_bios() {
     fi
 done
 
+log() {
+  SOURCE=${1//\/*\//}
+  MESSAGE=${*#${1}}
+  MESSAGE=${MESSAGE# }
+  logger -t ${SOURCE}.notice "${MESSAGE}"
+}
