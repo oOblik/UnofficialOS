@@ -238,8 +238,10 @@ then
 				RUNTHIS='${TBASH} "${ROMNAME}"'
 		;;
 		"nds")
-			jslisten set "drastic"
-			RUNTHIS='${TBASH} /usr/bin/start_drastic.sh "${ROMNAME}"'
+			jslisten set "-9 melonDS"
+			if [ "$EMU" = "melondssa" ]; then
+			RUNTHIS='${TBASH} /usr/bin/start_melonds.sh "${ROMNAME}"'
+			fi
 		;;
 		"solarus")
 			if [ "$EMU" = "solarus" ]
@@ -273,7 +275,7 @@ then
 			fi
 		;;
 		"psx")
-                        jslisten set "duckstation-nogui"
+			jslisten set "-9 duckstation-nogui"
 		        if [ "$EMU" = "duckstationsa" ]; then
             		RUNTHIS='${TBASH} /usr/bin/start_duckstation.sh "${ROMNAME}"'
         		fi
