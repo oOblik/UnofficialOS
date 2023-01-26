@@ -92,6 +92,14 @@ if [[ "$arguments" == *"--connect"* ]]; then
 	NETPLAY="--connect $NETPLAY --nick"
 fi
 
+### Offline all but the number of cores we need for this game if configured.
+NUMTHREADS=$(get_setting "cores" "${PLATFORM}" "${ROMNAME##*/}")
+if [ -n "${NUMTHREADS}" ] &&
+   [ ! ${NUMTHREADS} = "default" ]
+then
+  onlinethreads ${NUMTHREADS} 0
+fi
+
 ### Set the performance mode
 PERFORMANCE_MODE=$(get_setting "cpugovernor" "${PLATFORM}" "${ROMNAME##*/}")
 if [ ! "${PERFORMANCE_MODE}" = "auto" ]
@@ -289,7 +297,7 @@ then
         		fi
                 ;;
                 "ps2")
-                        jslisten set "-9 pcsx2"
+                        jslisten set "-9 pcsx2-qt"
                         if [ "$EMU" = "pcsx2sa" ]; then
                         RUNTHIS='${TBASH} /usr/bin/start_pcsx2.sh "${ROMNAME}"'
                         fi
@@ -502,6 +510,15 @@ else
 fi
 
 clear_screen
+
+### Reset the number of cores to use.
+NUMTHREADS=$(get_setting "system.threads")
+if [ -n "${NUMTHREADS}" ]
+then
+	onlinethreads ${NUMTHREADS} 0
+else
+	onlinethreads all 1
+fi
 
 ### Restore the overclock mode
 if [ -e "/usr/bin/overclock" ]
