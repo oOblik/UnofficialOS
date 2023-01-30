@@ -63,6 +63,11 @@ pre_configure_target() {
       CFLAGS="${CFLAGS} -DLINUX -DEGL_API_FB"
       CPPFLAGS="${CPPFLAGS} -DLINUX -DEGL_API_FB"
     ;;
+    RK3588)
+      PKG_MAKE_OPTS_TARGET=" platform=RK3588"
+      CFLAGS="${CFLAGS} -DLINUX -DEGL_API_FB"
+      CPPFLAGS="${CPPFLAGS} -DLINUX -DEGL_API_FB"
+    ;;
     *)
       PKG_MAKE_OPTS_TARGET="GLES=0 GLES3=0"
     ;;
