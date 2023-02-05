@@ -23,6 +23,7 @@ makeinstall_target() {
   cp ${PKG_DIR}/sources/scripts/battery ${INSTALL}/usr/bin
   cp ${PKG_DIR}/sources/scripts/internalwifi ${INSTALL}/usr/bin
   cp ${PKG_DIR}/sources/scripts/bluetooth_sense ${INSTALL}/usr/bin
+  cp ${PKG_DIR}/sources/scripts/led_mgr ${INSTALL}/usr/bin
   if [ -d "${PKG_DIR}/sources/devices/${DEVICE}" ]
   then
     cp ${PKG_DIR}/sources/devices/${DEVICE}/* ${INSTALL}/usr/bin
