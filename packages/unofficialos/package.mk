@@ -35,7 +35,7 @@ PKG_COMPAT=""
 
 PKG_MULTIMEDIA="ffmpeg mpv vlc"
 
-PKG_TOOLS="i2c-tools syncthing rclone jslisten evtest tailscale pygobject mesa-demos"
+PKG_TOOLS="i2c-tools synctools jslisten evtest tailscale pygobject mesa-demos"
 
 ### Project specific variables
 case "${PROJECT}" in
