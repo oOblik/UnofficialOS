@@ -15,7 +15,7 @@ case ${DEVICE} in
     PKG_PATCH_DIRS+=" wayland"
   ;;
   *)
-    PKG_VERSION="5ab5070d73f1acc51e064bd96be4ba6ce3c06f5c"
+    PKG_VERSION="55e0e7ffbea9143f7809a926cf11c6986971881a"
     PKG_PATCH_DIRS+=" legacy"
   ;;
 esac
