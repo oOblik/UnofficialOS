@@ -50,4 +50,7 @@ case "${DEVICE}" in
   RK3588)
     PKG_DEPENDS_TARGET+=" aethersx2"
   ;;
+  RG*)
+    PKG_DEPENDS_TARGET+=" common-shaders glsl-shaders"
+  ;;
 esac
