@@ -20,3 +20,4 @@ case "${DEVICE}" in
 esac
 
 PKG_URL="${PKG_SITE}.git"
+PKG_PATCH_DIRS+="${DEVICE}"
