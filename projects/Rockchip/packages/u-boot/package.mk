@@ -26,7 +26,8 @@ case ${DEVICE} in
     PKG_VERSION="62a0e69"
   ;;
   RK3588)
-    PKG_URL="https://github.com/orangepi-xunlong/u-boot-orangepi.git"
+    PKG_SITE="https://github.com/JustEnoughLinuxOS"
+    PKG_URL="${PKG_SITE}/rk35xx-uboot.git"
     PKG_VERSION="6534133f97a8e4fb6db83e58dbde23aec6041ec2"
     PKG_GIT_CLONE_BRANCH="v2017.09-rk3588"
   ;;
@@ -70,7 +71,7 @@ make_target() {
       rk3588)
         echo "Making for GPT (${UBOOT_DTB})..."
         DEBUG=${PKG_DEBUG} CROSS_COMPILE="${TARGET_KERNEL_PREFIX}" LDFLAGS="" ARCH=arm64 make mrproper
-        DEBUG=${PKG_DEBUG} CROSS_COMPILE="${TARGET_KERNEL_PREFIX}" LDFLAGS="" ARCH=arm64 make ${UBOOT_CONFIG} BL31=$(get_build_dir rkbin)/${PKG_BL31} ${PKG_LOADER} u-boot.dtb u-boot.itb
+        DEBUG=${PKG_DEBUG} CROSS_COMPILE="${TARGET_KERNEL_PREFIX}" LDFLAGS="" ARCH=arm64 make ${UBOOT_CONFIG} BL31=$(get_build_dir rkbin)/${PKG_BL31} $(get_build_dir rkbin)/${PKG_LOADER} u-boot.dtb u-boot.itb
         DEBUG=${PKG_DEBUG} CROSS_COMPILE="${TARGET_KERNEL_PREFIX}" LDFLAGS="" ARCH=arm64 _python_sysroot="${TOOLCHAIN}" _python_prefix=/ _python_exec_prefix=/ make HOSTCC="$HOST_CC" HOSTLDFLAGS="-L${TOOLCHAIN}/lib" HOSTSTRIP="true" CONFIG_MKIMAGE_DTC_PATH="scripts/dtc/dtc"
       ;;
       *)

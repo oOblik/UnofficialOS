@@ -31,8 +31,6 @@ LIBRETRO_CORES="2048 81 a5200 atari800 beetle-gba beetle-lynx beetle-ngp beetle-
                 vecx vice yabasanshiro xmil mesen virtualjaguar ecwolf_libretro vitaquake2           \
                 bsnes-mercury-performance duckstation fake08"
 
-PKG_DEPENDS_TARGET="${PKG_EMUS} ${PKG_RETROARCH} ${LIBRETRO_CORES}"
-
 ### Emulators or cores for specific devices
 case "${DEVICE}" in
   RG351P|RG351V|RG351MP|RGB20S)
@@ -45,12 +43,15 @@ case "${DEVICE}" in
     PKG_DEPENDS_TARGET+=" duckstationsa common-shaders glsl-shaders drastic dolphinsa scummvm"
   ;;
   handheld)
-    PKG_DEPENDS_TARGET+=" bsnes-hd duckstationsa dolphinsa dolphin pcsx2sa lrps2 desmume bsnes citra slang-shaders minivmac minivmacsa play beetle-saturn yuzusa primehack rpcs3sa citrasa ppsspp scummvm melondssa"
+    PKG_DEPENDS_TARGET+=" bsnes-hd duckstationsa dolphin dolphinsa pcsx2sa lrps2 desmume bsnes citra slang-shaders minivmac minivmacsa play beetle-saturn yuzusa primehack rpcs3sa citrasa ppsspp scummvm melondssa"
   ;;
   RK3588)
-    PKG_DEPENDS_TARGET+=" aethersx2"
+    PKG_DEPENDS_TARGET+=" dolphin dolphinsa aethersx2"
   ;;
   RG*)
     PKG_DEPENDS_TARGET+=" common-shaders glsl-shaders"
+    PKG_EMUS="moonlight openbor pico-8 PPSSPPSDL vicesa"
   ;;
 esac
+
+PKG_DEPENDS_TARGET="${PKG_EMUS} ${PKG_RETROARCH} ${LIBRETRO_CORES}"
