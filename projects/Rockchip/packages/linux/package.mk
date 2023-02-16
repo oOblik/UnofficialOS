@@ -28,20 +28,16 @@ case ${DEVICE} in
     PKG_VERSION="6.0.11"
     PKG_URL="https://www.kernel.org/pub/linux/kernel/v6.x/${PKG_NAME}-${PKG_VERSION}.tar.xz"
   ;;
-  RG353P|RG503)
-    PKG_URL="${PKG_SITE}/rk356x-kernel.git"
-    PKG_VERSION="f04983f"
-    GET_HANDLER_SUPPORT="git"
-    PKG_GIT_CLONE_BRANCH="main"
   RK3588)
     PKG_VERSION="161606b049488da100e5d7ec95c8997d3b59b20d"
     PKG_URL="${PKG_SITE}/rk35xx-uboot.git"
     GET_HANDLER_SUPPORT="git"
     PKG_GIT_CLONE_BRANCH="orange-pi-5.10-rk3588"
   ;;
-  RK3566)
+  RK3566|RG353P|RG503)
+    PKG_SITE="https://github.com/JustEnoughLinuxOS"
     PKG_URL="${PKG_SITE}/rk356x-kernel.git"
-    PKG_VERSION="4921ffd26"
+    PKG_VERSION="f31a6fff9"
     GET_HANDLER_SUPPORT="git"
     PKG_GIT_CLONE_BRANCH="main"
   ;;

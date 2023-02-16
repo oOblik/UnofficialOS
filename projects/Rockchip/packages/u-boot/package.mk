@@ -34,6 +34,7 @@ case ${DEVICE} in
   RK3566)
     PKG_SITE="https://github.com/JustEnoughLinuxOS"
     PKG_URL="${PKG_SITE}/rk356x-uboot.git"
+    PKG_VERSION="4dbf6b2"
   ;;
 esac
 
