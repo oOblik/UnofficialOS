@@ -15,25 +15,26 @@ esac
 
 if [ -f "${RELEASE_DIR}/3rdparty/bootloader/idbloader.img" ]; then
   echo "image: burn idbloader.img to image... (${PKG_SOC},${IDBSEEK})"
-  dd if="${RELEASE_DIR}/3rdparty/bootloader/idbloader.img" of="$DISK" ${IDBSEEK} conv=sync,noerror,notrunc >"${SAVE_ERROR}" 2>&1 || show_error
+  dd if="${RELEASE_DIR}/3rdparty/bootloader/idbloader.img" of="${DISK}" ${IDBSEEK} conv=sync,noerror,notrunc >"${SAVE_ERROR}" 2>&1 || show_error
 fi
 
 case "${PKG_SOC}" in
-  rk3588)
+  rk356x|rk3399|rk3588)
     if [ -f "${RELEASE_DIR}/3rdparty/bootloader/u-boot.itb" ]; then
       echo "image: burn uboot.itb to image... (${PKG_SOC})"
       dd if="${RELEASE_DIR}/3rdparty/bootloader/u-boot.itb" of="${DISK}" bs=512 seek=16384 conv=sync,noerror,notrunc >"${SAVE_ERROR}" 2>&1 || show_error
     fi
   ;;
   *)
-  	if [ -f "${RELEASE_DIR}/3rdparty/bootloader/u-boot.itb" ]; then
-      echo "image: burn uboot.itb to image... (${PKG_SOC})"
-      dd if="${RELEASE_DIR}/3rdparty/bootloader/u-boot.itb" of="${DISK}" bs=512 seek=16384 conv=sync,noerror,notrunc >"${SAVE_ERROR}" 2>&1 || show_error
-    fi
     if [ -f "${RELEASE_DIR}/3rdparty/bootloader/uboot.img" ]; then
       echo "image: burn uboot.img to image..."
       dd if="${RELEASE_DIR}/3rdparty/bootloader/uboot.img" of="${DISK}" bs=512 seek=16384 conv=sync,noerror,notrunc >"${SAVE_ERROR}" 2>&1 || show_error
     fi
+  ;;
+esac
+
+case "${PKG_SOC}" in
+  rk356x|rk3399|rk3588)
     if [ -f "${RELEASE_DIR}/3rdparty/bootloader/trust.img" ]; then
       echo "image: burn trust.img to image..."
       dd if="${RELEASE_DIR}/3rdparty/bootloader/trust.img" of="${DISK}" bs=512 seek=24576 conv=sync,noerror,notrunc >"${SAVE_ERROR}" 2>&1 || show_error
@@ -65,7 +66,7 @@ mkdir -p "${LE_TMP}/extlinux"
 cat << EOF > "${LE_TMP}/extlinux/extlinux.conf"
 LABEL ${DISTRO}
   LINUX /${KERNEL_NAME}
-  FDT /${DEVICE_DTB[0]}.dtb
+  FDTDIR /
   APPEND boot=UUID=${UUID_SYSTEM} disk=UUID=${UUID_STORAGE} ${EXTRA_CMDLINE}
 EOF
 

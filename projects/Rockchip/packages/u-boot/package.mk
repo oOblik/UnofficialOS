@@ -31,6 +31,10 @@ case ${DEVICE} in
     PKG_VERSION="6534133f97a8e4fb6db83e58dbde23aec6041ec2"
     PKG_GIT_CLONE_BRANCH="v2017.09-rk3588"
   ;;
+  RK3566)
+    PKG_SITE="https://github.com/JustEnoughLinuxOS"
+    PKG_URL="${PKG_SITE}/rk356x-uboot.git"
+  ;;
 esac
 
 PKG_IS_KERNEL_PKG="yes"
@@ -61,17 +65,18 @@ make_target() {
     fi
     [ "${BUILD_WITH_DEBUG}" = "yes" ] && PKG_DEBUG=1 || PKG_DEBUG=0
     case ${PKG_SOC} in
-      rk356x)
+      rk3588|rk356x)
         echo "Making for GPT (${UBOOT_DTB})..."
-        sed -i "s|TOOLCHAIN_ARM64=.*|TOOLCHAIN_ARM64=${TOOLCHAIN}/bin|" make.sh
-        sed -i "s|aarch64-linux-gnu|${TARGET_NAME}|g" make.sh
-        sed -i "s|RKBIN_TOOLS=../rkbin/tools|RKBIN_TOOLS=$(get_build_dir rkbin)/tools|" make.sh
-        ./make.sh ${UBOOT_DTB}
-      ;;
-      rk3588)
-        echo "Making for GPT (${UBOOT_DTB})..."
+        if [[ "${PKG_BL31}" =~ ^/bin ]]
+        then
+          PKG_BL31="$(get_build_dir rkbin)/${PKG_BL31}"
+        fi
+        if [[ "${PKG_LOADER}" =~ ^/bin ]]
+        then
+          PKG_LOADER="$(get_build_dir rkbin)/${PKG_LOADER}"
+        fi
         DEBUG=${PKG_DEBUG} CROSS_COMPILE="${TARGET_KERNEL_PREFIX}" LDFLAGS="" ARCH=arm64 make mrproper
-        DEBUG=${PKG_DEBUG} CROSS_COMPILE="${TARGET_KERNEL_PREFIX}" LDFLAGS="" ARCH=arm64 make ${UBOOT_CONFIG} BL31=$(get_build_dir rkbin)/${PKG_BL31} $(get_build_dir rkbin)/${PKG_LOADER} u-boot.dtb u-boot.itb
+        DEBUG=${PKG_DEBUG} CROSS_COMPILE="${TARGET_KERNEL_PREFIX}" LDFLAGS="" ARCH=arm64 make ${UBOOT_CONFIG} BL31=${PKG_BL31} ${PKG_LOADER} u-boot.dtb u-boot.itb
         DEBUG=${PKG_DEBUG} CROSS_COMPILE="${TARGET_KERNEL_PREFIX}" LDFLAGS="" ARCH=arm64 _python_sysroot="${TOOLCHAIN}" _python_prefix=/ _python_exec_prefix=/ make HOSTCC="$HOST_CC" HOSTLDFLAGS="-L${TOOLCHAIN}/lib" HOSTSTRIP="true" CONFIG_MKIMAGE_DTC_PATH="scripts/dtc/dtc"
       ;;
       *)

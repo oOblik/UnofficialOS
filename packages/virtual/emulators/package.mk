@@ -46,11 +46,10 @@ case "${DEVICE}" in
     PKG_DEPENDS_TARGET+=" bsnes-hd duckstationsa dolphin dolphinsa pcsx2sa lrps2 desmume bsnes citra slang-shaders minivmac minivmacsa play beetle-saturn yuzusa primehack rpcs3sa citrasa ppsspp scummvm melondssa"
   ;;
   RK3588)
-    PKG_DEPENDS_TARGET+=" dolphin dolphinsa aethersx2"
+    PKG_DEPENDS_TARGET+=" dolphin dolphinsa aethersx2 mame"
   ;;
-  RG*)
-    PKG_DEPENDS_TARGET+=" common-shaders glsl-shaders"
-    PKG_EMUS="moonlight openbor pico-8 PPSSPPSDL vicesa"
+  RK3566)
+    PKG_DEPENDS_TARGET+=" duckstationsa common-shaders glsl-shaders drastic dolphinsa scummvm"
   ;;
 esac
 

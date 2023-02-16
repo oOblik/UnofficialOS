@@ -27,7 +27,7 @@ world: RK3326 RK3566 RK3399 RK3588 x86_64
 
 x86_64: handheld
 
-RK3566: RG503 RG353P
+#RK3566: RG503 RG353P
 
 RK3399: RG552
 
@@ -68,6 +68,10 @@ RGB20S:
 	DEVICE_ROOT=RG351P PROJECT=Rockchip DEVICE=RGB20S ARCH=arm ./scripts/build_distro
 	DEVICE_ROOT=RG351P PROJECT=Rockchip DEVICE=RGB20S ARCH=aarch64 ./scripts/build_distro
 	
+RK3566:
+	PROJECT=Rockchip DEVICE=RK3566 ARCH=arm ./scripts/build_distro
+	PROJECT=Rockchip DEVICE=RK3566 ARCH=aarch64 ./scripts/build_distro
+
 update:
 	PROJECT=Rockchip DEVICE=RG552 ARCH=aarch64 ./scripts/update_packages
 

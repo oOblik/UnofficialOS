@@ -46,7 +46,10 @@ fi
 
 pre_configure_target() {
   case ${DEVICE} in
-    RG351P|RG351V|RG351MP|RG353P|RG503|RG552|RGB20S|RK3588)
+    RG351P|RG351V|RG351MP|RG353P|RG503|RG552|RGB20S)
+      PKG_MAKE_OPTS_TARGET+=" -C yabause/src/libretro platform=rockpro64 HAVE_NEON=0 FORCE_GLES=1"
+    ;;
+    RK35*)
       PKG_MAKE_OPTS_TARGET+=" -C yabause/src/libretro platform=rockpro64 HAVE_NEON=0 FORCE_GLES=1"
     ;;
     *)

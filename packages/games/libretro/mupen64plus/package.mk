@@ -32,7 +32,7 @@ PKG_SHORTDESC="mupen64plus + RSP-HLE + GLideN64 + libretro"
 PKG_LONGDESC="mupen64plus + RSP-HLE + GLideN64 + libretro"
 PKG_TOOLCHAIN="make"
 PKG_BUILD_FLAGS="-lto"
-PKG_PATCH_DIRS+="${DEVICE}"
+PKG_PATCH_DIRS+=" ${DEVICE}"
 
 if [ ! "${OPENGL}" = "no" ]; then
   PKG_DEPENDS_TARGET+=" ${OPENGL} glu"
@@ -63,8 +63,8 @@ pre_configure_target() {
       CFLAGS="${CFLAGS} -DLINUX -DEGL_API_FB"
       CPPFLAGS="${CPPFLAGS} -DLINUX -DEGL_API_FB"
     ;;
-    RK3588)
-      PKG_MAKE_OPTS_TARGET=" platform=RK3588"
+    RK35*)
+      PKG_MAKE_OPTS_TARGET=" platform=${DEVICE}"
       CFLAGS="${CFLAGS} -DLINUX -DEGL_API_FB"
       CPPFLAGS="${CPPFLAGS} -DLINUX -DEGL_API_FB"
     ;;
