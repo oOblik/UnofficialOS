@@ -2,7 +2,6 @@
 # Copyright (C) 2022-present BrooksyTech (https://github.com/brooksytech)
 
 PKG_NAME="dolphinsa"
-PKG_VERSION="4d164fcb77487b0cb732e0423961fd042c3e7e3b"
 PKG_LICENSE="GPLv2"
 PKG_DEPENDS_TARGET="toolchain libevdev libdrm ffmpeg zlib libpng lzo libusb zstd ecm"
 PKG_LONGDESC="Dolphin is a GameCube / Wii emulator, allowing you to play games for these two platforms on PC with improvements. "
@@ -11,8 +10,7 @@ case ${DEVICE} in
   RG552|handheld|RK3588)
     PKG_SITE="https://github.com/dolphin-emu/dolphin"
     PKG_URL="${PKG_SITE}.git"
-    PKG_VERSION="8d477c65c9a72020a5839299c0dcf130304cb2e6"
-    PKG_TOOLCHAIN="cmake"
+    PKG_VERSION="4d164fcb77487b0cb732e0423961fd042c3e7e3b"
     PKG_PATCH_DIRS+=" wayland"
   ;;
   *)
@@ -26,14 +24,12 @@ esac
 
 if [ ! "${OPENGL}" = "no" ]; then
   PKG_DEPENDS_TARGET+=" ${OPENGL} glu libglvnd"
-  PKG_CMAKE_OPTS_TARGET+="     -DENABLE_X11=OFF \
-                               -DENABLE_EGL=ON"
+  PKG_CMAKE_OPTS_TARGET+="		-DENABLE_EGL=ON"
 fi
 
 if [ "${OPENGLES_SUPPORT}" = yes ]; then
   PKG_DEPENDS_TARGET+=" ${OPENGLES}"
-  PKG_CMAKE_OPTS_TARGET+="     -DENABLE_X11=OFF \
-                               -DENABLE_EGL=ON"
+  PKG_CMAKE_OPTS_TARGET+="		-DENABLE_EGL=ON"
 fi
 
 if [ "${DISPLAYSERVER}" = "wl" ]; then
@@ -61,7 +57,8 @@ PKG_CMAKE_OPTS_TARGET+=" -DENABLE_HEADLESS=ON \
                          -DENABLE_LTO=ON \
                          -DENABLE_QT=OFF \
                          -DENCODE_FRAMEDUMPS=OFF \
-                         -DENABLE_CLI_TOOL=OFF"
+                         -DENABLE_CLI_TOOL=OFF \
+                         -DENABLE_X11=OFF"
 
 
 makeinstall_target() {
@@ -79,7 +76,7 @@ makeinstall_target() {
 
 post_install() {
     case ${DEVICE} in
-      RG503|RG353P)
+      RG503|RG353P|RK3566)
         DOLPHIN_PLATFORM="drm"
       ;;
       *)
