@@ -37,7 +37,7 @@ case ${DEVICE} in
   RK3566|RG353P|RG503)
     PKG_SITE="https://github.com/JustEnoughLinuxOS"
     PKG_URL="${PKG_SITE}/rk356x-kernel.git"
-    PKG_VERSION="8c67ec6ed"
+    PKG_VERSION="3cb426d3e"
     GET_HANDLER_SUPPORT="git"
     PKG_GIT_CLONE_BRANCH="main"
   ;;
