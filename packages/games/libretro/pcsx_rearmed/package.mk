@@ -19,7 +19,7 @@ make_target() {
   if [[ "${DEVICE}" =~ RG351 ]] || [[ "${DEVICE}" =~ RGB20S ]]
   then
     make -f Makefile.libretro GIT_VERSION=${PKG_VERSION} platform=RG351x
-  elif [[ "${DEVICE}" =~ RG503 ]] || [[ "${DEVICE}" =~ RG353P ]]
+  elif [[ "${DEVICE}" =~ RG503 ]] || [[ "${DEVICE}" =~ RG353P ]] || [[ "${DEVICE}" =~ RK3566 ]]
   then
     make -f Makefile.libretro GIT_VERSION=${PKG_VERSION} platform=RK3566
   else
@@ -37,3 +37,4 @@ makeinstall_target() {
     cp -vP ${ROOT}/build.${DISTRO}-${DEVICE}.arm/pcsx_rearmed-*/.install_pkg/usr/lib/libretro/pcsx_rearmed_libretro.so ${INSTALL}/usr/lib/libretro/pcsx_rearmed32_libretro.so
   fi
 }
+
