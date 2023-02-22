@@ -1,7 +1,7 @@
 PKG_NAME="yabasanshiroSA"
 PKG_LICENSE="GPLv2"
 PKG_SITE="https://github.com/devmiyax/yabause"
-PKG_ARCH="arm aarch64"
+#PKG_ARCH="arm aarch64"
 PKG_URL="${PKG_SITE}.git"
 PKG_DEPENDS_TARGET="toolchain SDL2 boost openal-soft zlib"
 PKG_LONGDESC="Yabause is a Sega Saturn emulator and took over as Yaba Sanshiro"
@@ -76,8 +76,7 @@ pre_configure_target() {
     ;;
   esac
 
-PKG_CMAKE_OPTS_TARGET+=" -DCMAKE_SYSTEM_PROCESSOR=x86_64"
-
+  PKG_CMAKE_OPTS_TARGET+=" -DCMAKE_SYSTEM_PROCESSOR=x86_64"
 
   PKG_CMAKE_OPTS_TARGET+=" -DOPENGL_INCLUDE_DIR=${SYSROOT_PREFIX}/usr/include \
                            -DOPENGL_opengl_LIBRARY=${SYSROOT_PREFIX}/usr/lib \

@@ -27,7 +27,7 @@ PKG_COMPAT=""
 
 PKG_MULTIMEDIA="ffmpeg mpv vlc"
 
-PKG_TOOLS="i2c-tools synctools jslisten evtest tailscale pygobject"
+PKG_TOOLS="i2c-tools synctools jslisten evtest tailscale pygobject 351files"
 
 ### Project specific variables
 case "${PROJECT}" in

@@ -16,11 +16,13 @@ PKG_BUILD_FLAGS="+lto"
 PKG_PATCH_DIRS+="${DEVICE}"
 
 case ${DEVICE} in
-  RK3588)
+  RK35*)
+  RG*)
     PKG_VERSION="40386bca08d33c2d6584d6e7da4efee9bfeb3f96"
+    PKG_CMAKE_OPTS_TARGET+=" -DMOBILE_DEVICE=ON"
   ;;
   *)
-    PKG_VERSION="86a5a82050d5577aac45210dde6616866b857d38"
+    PKG_VERSION="febba18"
   ;;
 esac
 
@@ -74,7 +76,8 @@ PKG_CMAKE_OPTS_TARGET+="${PKG_CMAKE_OPTS_TARGET} \
 			-DUSE_DISCORD=OFF"
 
 pre_configure_target() {
-  sed -i "s|include_directories(/usr/include/drm)|include_directories(${SYSROOT_PREFIX}/usr/include/drm)|" $PKG_BUILD/CMakeLists.txt
+  sed -i 's/\-O[23]//g' ${PKG_BUILD}/CMakeLists.txt
+  sed -i "s|include_directories(/usr/include/drm)|include_directories(${SYSROOT_PREFIX}/usr/include/drm)|" ${PKG_BUILD}/CMakeLists.txt
 }
 
 pre_make_target() {
