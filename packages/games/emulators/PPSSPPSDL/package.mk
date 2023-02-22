@@ -16,12 +16,11 @@ PKG_BUILD_FLAGS="+lto"
 PKG_PATCH_DIRS+="${DEVICE}"
 
 case ${DEVICE} in
-  RK35*)
-  RG*)
+  R*)
     PKG_VERSION="40386bca08d33c2d6584d6e7da4efee9bfeb3f96"
   ;;
   *)
-    PKG_VERSION="febba18"
+    PKG_VERSION="cd53526"
   ;;
 esac
 
