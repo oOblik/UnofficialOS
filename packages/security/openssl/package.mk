@@ -44,8 +44,8 @@ pre_configure_host() {
 }
 
 configure_host() {
-  cd $PKG_BUILD/.$HOST_NAME
-  ./Configure $PKG_CONFIGURE_OPTS_HOST $PKG_CONFIGURE_OPTS_SHARED linux-${MACHINE_HARDWARE_NAME} $CFLAGS $LDFLAGS
+  cd ${PKG_BUILD}/.${HOST_NAME}
+  ./Configure ${PKG_CONFIGURE_OPTS_HOST} ${PKG_CONFIGURE_OPTS_SHARED} linux-${MACHINE_HARDWARE_NAME} ${CFLAGS} ${LDFLAGS}
 }
 
 makeinstall_host() {
@@ -71,8 +71,8 @@ pre_configure_target() {
 }
 
 configure_target() {
-  cd $PKG_BUILD/.$TARGET_NAME
-  ./Configure $PKG_CONFIGURE_OPTS_TARGET $PKG_CONFIGURE_OPTS_SHARED $PLATFORM_FLAGS $OPENSSL_TARGET $CFLAGS $LDFLAGS
+  cd ${PKG_BUILD}/.${TARGET_NAME}
+  ./Configure ${PKG_CONFIGURE_OPTS_TARGET} ${PKG_CONFIGURE_OPTS_SHARED} ${PLATFORM_FLAGS} ${OPENSSL_TARGET} ${CFLAGS} ${LDFLAGS}
 }
 
 makeinstall_target() {

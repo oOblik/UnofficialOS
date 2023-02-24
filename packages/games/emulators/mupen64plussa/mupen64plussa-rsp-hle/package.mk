@@ -41,24 +41,9 @@ make_target() {
 makeinstall_target() {
   UPREFIX=${INSTALL}/usr/local
   ULIBDIR=${UPREFIX}/lib
-  UBINDIR=${UPREFIX}/bin
-  UMANDIR=${UPREFIX}/share/man
-  UAPPSDIR=${UPREFIX}/share/applications
-  UICONSDIR=${UPREFIX}/share/icons/hicolor
-  mkdir -p ${UBINDIR}
-  cp ${PKG_BUILD}/projects/unix/mupen64plus ${UBINDIR}
-  #$STRIP ${UBINDIR}/mupen64plus
-  chmod 0755 ${UBINDIR}/mupen64plus
-  mkdir -p ${UMANDIR}/man6
-  cp ${PKG_BUILD}/doc/mupen64plus.6 ${UMANDIR}/man6
-  chmod 0644 ${UMANDIR}/man6/mupen64plus.6
-  mkdir -p ${UAPPSDIR}
-  cp ${PKG_BUILD}/data/mupen64plus.desktop ${UAPPSDIR}
-  chmod 0644 ${UAPPSDIR}/mupen64plus.desktop
-  mkdir -p ${UICONSDIR}/48x48/apps
-  cp ${PKG_BUILD}/data/icons/48x48/apps/mupen64plus.png ${UICONSDIR}/48x48/apps
-  chmod 0644 ${UICONSDIR}/48x48/apps/mupen64plus.png
-  mkdir -p ${UICONSDIR}/scalable/apps
-  cp ${PKG_BUILD}/data/icons/scalable/apps/mupen64plus.svg ${UICONSDIR}/scalable/apps
-  chmod 0644 ${UICONSDIR}/scalable/apps/mupen64plus.svg
+  UPLUGINDIR=${ULIBDIR}/mupen64plus
+  mkdir -p ${UPLUGINDIR}
+  cp ${PKG_BUILD}/projects/unix/mupen64plus-rsp-hle.so ${UPLUGINDIR}
+  #${STRIP} ${UPLUGINDIR}/mupen64plus-rsp-hle.so
+  chmod 0644 ${UPLUGINDIR}/mupen64plus-rsp-hle.so
 }
