@@ -41,7 +41,7 @@ case "${PROJECT}" in
 esac
 
 if [ ! "${OPENGL}" = "no" ]; then
-  PKG_DEPENDS_TARGET+=" mesa-demos"
+  PKG_DEPENDS_TARGET+=" mesa-demos glmark2"
 fi
 
 if [ ! -z "${BASE_ONLY}" ]
