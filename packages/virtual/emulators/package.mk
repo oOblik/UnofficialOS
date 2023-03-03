@@ -41,19 +41,19 @@ case "${DEVICE}" in
     LIBRETRO_CORES+=" bsnes-hd"
   ;;
   RG503|RG353P)
-    PKG_DEPENDS_TARGET+=" duckstationsa common-shaders glsl-shaders drastic dolphinsa scummvm"
+    PKG_DEPENDS_TARGET+=" common-shaders glsl-shaders drastic dolphinsa scummvm"
   ;;
   handheld)
-    PKG_DEPENDS_TARGET+=" dolphin dolphinsa cemu citra citrasa desmume lrps2 mame melondssa minivmac minivmacsa       \
+    PKG_DEPENDS_TARGET+=" duckstationsa dolphin dolphinsa cemu citra citrasa desmume lrps2 mame melondssa minivmac minivmacsa       \
                         pcsx2sa play primehack rpcs3sa xemu yuzusa"
     LIBRETRO_CORES+=" beetle-psx bsnes-hd"
   ;;
   RK3588)
-    PKG_DEPENDS_TARGET+=" dolphin dolphinsa aethersx2 mame pcsx_rearmed box86 box64"
+    PKG_DEPENDS_TARGET+=" duckstationsa dolphin dolphinsa aethersx2 mame pcsx_rearmed box86 box64"
     LIBRETRO_CORES+=" beetle-psx bsnes-hd"
   ;;
   RK3566)
-    PKG_DEPENDS_TARGET+=" duckstationsa common-shaders glsl-shaders drastic dolphinsa scummvm box86 box64"
+    PKG_DEPENDS_TARGET+=" common-shaders glsl-shaders drastic dolphinsa scummvm box86 box64"
   ;;
 esac
 
