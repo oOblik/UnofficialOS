@@ -49,11 +49,11 @@ case "${DEVICE}" in
     LIBRETRO_CORES+=" beetle-psx bsnes-hd"
   ;;
   RK3588)
-    PKG_DEPENDS_TARGET+=" dolphin dolphinsa aethersx2 mame pcsx_rearmed"
+    PKG_DEPENDS_TARGET+=" dolphin dolphinsa aethersx2 mame pcsx_rearmed box86 box64"
     LIBRETRO_CORES+=" beetle-psx bsnes-hd"
   ;;
   RK3566)
-    PKG_DEPENDS_TARGET+=" duckstationsa common-shaders glsl-shaders drastic dolphinsa scummvm"
+    PKG_DEPENDS_TARGET+=" duckstationsa common-shaders glsl-shaders drastic dolphinsa scummvm box86 box64"
   ;;
 esac
 
