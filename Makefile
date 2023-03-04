@@ -38,6 +38,7 @@ RK3588:
 	PROJECT=Rockchip DEVICE=RK3588 ARCH=aarch64 ./scripts/build_distro
 
 handheld:
+	PROJECT=PC DEVICE=handheld ARCH=i686 ./scripts/build_distro
 	PROJECT=PC DEVICE=handheld ARCH=x86_64 ./scripts/build_distro
 
 RG552:
