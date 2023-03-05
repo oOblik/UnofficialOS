@@ -22,7 +22,7 @@ PKG_UI="emulationstation es-themes"
 
 PKG_SOFTWARE=""
 
-PKG_COMPAT=""
+PKG_COMPAT="lib32"
 
 PKG_MULTIMEDIA="ffmpeg mpv vlc"
 
@@ -35,7 +35,6 @@ case "${PROJECT}" in
   ;;
   *)
     PKG_EMUS+=" retropie-shaders"
-    PKG_COMPAT+=" lib32"
   ;;
 esac
 
