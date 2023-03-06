@@ -26,6 +26,6 @@ if [ "${DISPLAYSERVER}" = "wl" ]; then
 fi
 
 ### Compatability
-PKG_DEPENDS_TARGET+=" lutris-wine"
+#PKG_DEPENDS_TARGET+=" lutris-wine"
 
 
