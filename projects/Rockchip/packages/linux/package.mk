@@ -29,10 +29,10 @@ case ${DEVICE} in
     PKG_URL="https://www.kernel.org/pub/linux/kernel/v6.x/${PKG_NAME}-${PKG_VERSION}.tar.xz"
   ;;
   RK3588)
-    PKG_VERSION="161606b049488da100e5d7ec95c8997d3b59b20d"
-    PKG_URL="${PKG_SITE}/rk35xx-kernel.git"
+    PKG_VERSION="b5a283331fa0"
+    PKG_URL="${PKG_SITE}/rk358x-kernel.git"
     GET_HANDLER_SUPPORT="git"
-    PKG_GIT_CLONE_BRANCH="orange-pi-5.10-rk3588"
+    PKG_GIT_CLONE_BRANCH="main"
   ;;
   RK3566|RG353P|RG503)
     PKG_SITE="https://github.com/JustEnoughLinuxOS"
@@ -240,9 +240,9 @@ make_target() {
 
     KERNEL_TARGET="${KERNEL_UIMAGE_TARGET}"
   fi
-  if [ "${PKG_SOC}" = "rk356x" ]; then
+  #if [ "${PKG_SOC}" = "rk356x" ]; then
       kernel_make ${KERNEL_TARGET} ${KERNEL_MAKE_EXTRACMD} ARCH=arm64 ${DEVICE_DTB[0]}.img
-  fi
+  #fi
 }
 
 makeinstall_target() {
@@ -254,12 +254,12 @@ makeinstall_target() {
         cp -v ${dtb} ${INSTALL}/usr/share/bootloader
       fi
     done
-    if [ "${PKG_SOC}" = "rk356x" ]; then
+    #if [ "${PKG_SOC}" = "rk356x" ]; then
       ARCH=arm64 scripts/mkimg --dtb ${DEVICE_DTB[0]}.dtb
-      ARCH=arm64 scripts/mkmultidtb.py RK3566-EVB
+      ARCH=arm64 scripts/mkmultidtb.py ${PKG_SOC}
       cp -v resource.img ${INSTALL}/usr/share/bootloader
       ARCH=${TARGET_ARCH}
-    fi
+    #fi
   elif [ "${BOOTLOADER}" = "bcm2835-bootloader" ]; then
     mkdir -p ${INSTALL}/usr/share/bootloader/overlays
 
