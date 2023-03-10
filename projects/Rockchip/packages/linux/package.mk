@@ -29,7 +29,7 @@ case ${DEVICE} in
     PKG_URL="https://www.kernel.org/pub/linux/kernel/v6.x/${PKG_NAME}-${PKG_VERSION}.tar.xz"
   ;;
   RK3588)
-    PKG_VERSION="be5a21cfbbcf"
+    PKG_VERSION="9469ea8bd5ed"
     PKG_URL="${PKG_SITE}/rk358x-kernel.git"
     GET_HANDLER_SUPPORT="git"
     PKG_GIT_CLONE_BRANCH="main"
@@ -37,7 +37,7 @@ case ${DEVICE} in
   RK3566|RG353P|RG503)
     PKG_SITE="https://github.com/JustEnoughLinuxOS"
     PKG_URL="${PKG_SITE}/rk356x-kernel.git"
-    PKG_VERSION="52be47a8a"
+    PKG_VERSION="0d81a18e5"
     GET_HANDLER_SUPPORT="git"
     PKG_GIT_CLONE_BRANCH="main"
   ;;
