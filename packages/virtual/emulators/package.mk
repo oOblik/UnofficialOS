@@ -45,7 +45,7 @@ case "${DEVICE}" in
   ;;
   handheld)
     PKG_DEPENDS_TARGET+=" duckstationsa dolphin dolphinsa cemu citra citrasa desmume lrps2 mame melondssa minivmac minivmacsa       \
-                        pcsx2sa play primehack rpcs3sa xemu yuzusa"
+                        pcsx2sa play primehack rpcs3sa ryujinx xemu yuzusa"
     LIBRETRO_CORES+=" beetle-psx bsnes-hd"
   ;;
   RK3588)
