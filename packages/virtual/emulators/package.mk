@@ -8,10 +8,10 @@ PKG_SECTION="virtual"
 PKG_LONGDESC="Emulation metapackage."
 
 PKG_EMUS="hatarisa openbor hypseus-singe moonlight hypseus-singe pico-8 flycastsa   \
-          scummvmsa PPSSPPSDL yabasanshiroSA vicesa mupen64plussa-audio-sdl         \
-          mupen64plussa-input-sdl mupen64plussa-ui-console mupen64plussa-video-rice \
-          mupen64plussa-core mupen64plussa-rsp-hle mupen64plussa-rsp-cxd4 mupen64plussa-video-glide64mk2 \
-          mupen64plussa-video-gliden64 lzdoom gzdoom ecwolf amiberry raze"
+          scummvmsa PPSSPPSDL yabasanshiroSA vicesa mupen64plus-sa-audio-sdl         \
+          mupen64plus-sa-input-sdl mupen64plus-sa-ui-console mupen64plus-sa-video-rice \
+          mupen64plus-sa-core mupen64plus-sa-rsp-hle mupen64plus-sa-rsp-cxd4 mupen64plus-sa-video-glide64mk2 \
+          mupen64plus-sa-video-gliden64 lzdoom gzdoom ecwolf amiberry raze"
 
 PKG_RETROARCH="core-info libretro-database retroarch retroarch-assets retroarch-joypads                  \
               retroarch-overlays slang-shaders"
@@ -45,7 +45,7 @@ case "${DEVICE}" in
   ;;
   handheld)
     PKG_DEPENDS_TARGET+=" duckstationsa dolphin dolphinsa cemu citra citrasa desmume lrps2 mame melondssa minivmac minivmacsa       \
-                        pcsx2sa play primehack rpcs3sa ryujinx xemu yuzusa"
+                        mupen64plus-sa pcsx2sa play primehack rpcs3sa ryujinx xemu yuzusa"
     LIBRETRO_CORES+=" beetle-psx bsnes-hd"
   ;;
   RK3588)

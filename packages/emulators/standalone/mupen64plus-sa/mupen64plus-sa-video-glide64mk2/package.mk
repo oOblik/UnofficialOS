@@ -1,14 +1,14 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (C) 2019-present Shanti Gilbert (https://github.com/shantigilbert)
 
-PKG_NAME="mupen64plussa-ui-console"
-PKG_VERSION="3ad5cbb56fcf4921ffae8c7b8ee52ea0ae82c044"
+PKG_NAME="mupen64plus-sa-video-glide64mk2"
+PKG_VERSION="497a8255ac962c0090487514268011fe509b1e2c"
 PKG_LICENSE="GPLv2"
-PKG_SITE="https://github.com/mupen64plus/mupen64plus-ui-console"
-PKG_URL="https://github.com/mupen64plus/mupen64plus-ui-console/archive/${PKG_VERSION}.tar.gz"
-PKG_DEPENDS_TARGET="toolchain libpng SDL2 SDL2_net zlib freetype nasm:host mupen64plussa-core"
-PKG_SHORTDESC="mupen64plus-ui-console"
-PKG_LONGDESC="Mupen64Plus Standalone Console"
+PKG_SITE="https://github.com/mupen64plus/mupen64plus-video-glide64mk2"
+PKG_URL="https://github.com/mupen64plus/mupen64plus-video-glide64mk2/archive/${PKG_VERSION}.tar.gz"
+PKG_DEPENDS_TARGET="toolchain boost libpng SDL2 SDL2_net zlib freetype nasm:host mupen64plus-sa-core"
+PKG_SHORTDESC="mupen64plus-video-glide64mk2"
+PKG_LONGDESC="Mupen64Plus Standalone Glide64 Video Driver"
 PKG_TOOLCHAIN="manual"
 
 if [ ! "${OPENGL}" = "no" ]; then
@@ -28,7 +28,7 @@ make_target() {
       BINUTILS="$(get_build_dir binutils)/.aarch64-libreelec-linux-gnueabi"
     ;;
   esac
-  export APIDIR=$(get_build_dir mupen64plussa-core)/.install_pkg/usr/local/include/mupen64plus
+  export APIDIR=$(get_build_dir mupen64plus-sa-core)/.install_pkg/usr/local/include/mupen64plus
   export SDL_CFLAGS="-I${SYSROOT_PREFIX}/usr/include/SDL2 -pthread"
   export SDL_LDLIBS="-lSDL2_net -lSDL2"
   export CROSS_COMPILE="${TARGET_PREFIX}"
@@ -41,9 +41,13 @@ make_target() {
 makeinstall_target() {
   UPREFIX=${INSTALL}/usr/local
   ULIBDIR=${UPREFIX}/lib
+  USHAREDIR=${UPREFIX}/share/mupen64plus
   UPLUGINDIR=${ULIBDIR}/mupen64plus
   mkdir -p ${UPLUGINDIR}
-  cp ${PKG_BUILD}/projects/unix/mupen64plus-rsp-hle.so ${UPLUGINDIR}
-  #${STRIP} ${UPLUGINDIR}/mupen64plus-rsp-hle.so
-  chmod 0644 ${UPLUGINDIR}/mupen64plus-rsp-hle.so
+  cp ${PKG_BUILD}/projects/unix/mupen64plus-video-glide64mk2.so ${UPLUGINDIR}
+  #${STRIP} ${UPLUGINDIR}/mupen64plus-video-glide64mk2.so
+  chmod 0644 ${UPLUGINDIR}/mupen64plus-video-glide64mk2.so
+  mkdir -p ${USHAREDIR}
+  cp ${PKG_BUILD}/data/Glide64mk2.ini ${USHAREDIR}
+  chmod 0644 ${USHAREDIR}/Glide64mk2.ini
 }
