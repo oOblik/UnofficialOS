@@ -7,7 +7,7 @@ PKG_SITE="unofficialos.org"
 PKG_SECTION="virtual"
 PKG_LONGDESC="Emulation metapackage."
 
-PKG_EMUS="hatarisa openbor hypseus-singe moonlight hypseus-singe pico-8 flycastsa   \
+PKG_EMUS="hatarisa openbor moonlight hypseus-singe pico-8 flycast-sa   \
           scummvmsa PPSSPPSDL yabasanshiroSA vicesa mupen64plus-sa-audio-sdl         \
           mupen64plus-sa-input-sdl mupen64plus-sa-ui-console mupen64plus-sa-video-rice \
           mupen64plus-sa-core mupen64plus-sa-rsp-hle mupen64plus-sa-rsp-cxd4 mupen64plus-sa-video-glide64mk2 \
@@ -37,23 +37,23 @@ case "${DEVICE}" in
     PKG_DEPENDS_TARGET+=" common-shaders glsl-shaders drastic scummvm"
   ;;
   RG552)
-    PKG_DEPENDS_TARGET+=" duckstationsa dolphinsa dolphin slang-shaders beetle-saturn drastic scummvm"
+    PKG_DEPENDS_TARGET+=" duckstation-sa dolphin-sa dolphin slang-shaders beetle-saturn drastic scummvm"
     LIBRETRO_CORES+=" bsnes-hd"
   ;;
   RG503|RG353P)
-    PKG_DEPENDS_TARGET+=" common-shaders glsl-shaders drastic dolphinsa scummvm"
+    PKG_DEPENDS_TARGET+=" common-shaders glsl-shaders drastic dolphin-sa scummvm"
   ;;
   handheld)
-    PKG_DEPENDS_TARGET+=" duckstationsa dolphin dolphinsa cemu citra citrasa desmume lrps2 mame melondssa minivmac minivmacsa       \
-                        mupen64plus-sa pcsx2sa play primehack rpcs3sa ryujinx xemu yuzusa"
-    LIBRETRO_CORES+=" beetle-psx bsnes-hd"
+    PKG_EMUS+=" duckstation-sa dolphin-sa cemu citra-sa lrps2 mame melonds-sa minivmac minivmacsa        \
+               mupen64plus-sa pcsx2-sa play primehack rpcs3-sa ryujinx-sa xemu-sa yuzu-sa"
+    LIBRETRO_CORES+=" beetle-psx bsnes-hd citra desmume dolphin lrps2"
   ;;
   RK3588)
-    PKG_DEPENDS_TARGET+=" duckstationsa dolphin dolphinsa aethersx2 mame pcsx_rearmed box86 box64"
-    LIBRETRO_CORES+=" beetle-psx bsnes-hd"
+    PKG_EMUS+=" aethersx2-sa duckstation-sa dolphin mame pcsx_rearmed box86 box64 yabasanshiroSA"
+    LIBRETRO_CORES+=" beetle-psx bsnes-hd dolphin"
   ;;
   RK3566)
-    PKG_DEPENDS_TARGET+=" common-shaders glsl-shaders drastic dolphinsa scummvm box86 box64"
+    PKG_DEPENDS_TARGET+=" common-shaders glsl-shaders drastic dolphin-sa scummvm box86 box64"
   ;;
 esac
 

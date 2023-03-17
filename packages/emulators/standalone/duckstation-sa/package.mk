@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (C) 2022-present BrooksyTech (https://github.com/brooksytech)
 
-PKG_NAME="duckstationsa"
+PKG_NAME="duckstation-sa"
 PKG_LICENSE="GPLv3"
 PKG_DEPENDS_TARGET="toolchain SDL2 nasm:host pulseaudio openssl libidn2 nghttp2 zlib curl libevdev ecm"
 PKG_SITE="https://github.com/stenzek/duckstation"
@@ -11,7 +11,7 @@ PKG_TOOLCHAIN="cmake"
 
 case ${DEVICE} in
   RG552|handheld|RK3588)
-    PKG_VERSION="51e4c4bfb09f336b5b6ad5b75b3fffe63799b68c"
+    PKG_VERSION="3bbce19df29ccabd26aef7d8afa09ec63df98ccf"
     PKG_PATCH_DIRS+=" wayland"
   ;;
   *)
