@@ -50,7 +50,7 @@ case "${DEVICE}" in
                      play-lr"
   ;;
   RK3588)
-    PKG_EMUS+=" aethersx2-sa duckstation-sa dolphin mame pcsx_rearmed box86 box64 yabasanshiroSA"
+    PKG_EMUS+=" aethersx2-sa duckstation-sa dolphin mame pcsx_rearmed-lr box86 box64 yabasanshiroSA"
     LIBRETRO_CORES+=" beetle-psx-lr bsnes-hd-lr dolphin-lr"
   ;;
   RK3566)
