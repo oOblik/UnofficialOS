@@ -24,7 +24,7 @@ PKG_SOFTWARE=""
 
 PKG_COMPAT="lib32"
 
-PKG_MULTIMEDIA="ffmpeg mpv vlc"
+PKG_MULTIMEDIA="ffmpeg vlc mpv"
 
 PKG_TOOLS="i2c-tools synctools jslisten evtest tailscale pygobject 351files"
 
