@@ -8,7 +8,7 @@ PKG_SECTION="virtual"
 PKG_LONGDESC="Emulation metapackage."
 
 PKG_EMUS="hatarisa openbor moonlight hypseus hypseus-singe pico-8 flycast-sa   \
-          scummvmsa PPSSPPSDL yabasanshiroSA vicesa mupen64plus-sa-audio-sdl         \
+          scummvmsa PPSSPPSDL yabasanshiro-sa vicesa mupen64plus-sa-audio-sdl         \
           mupen64plus-sa-input-sdl mupen64plus-sa-ui-console mupen64plus-sa-video-rice \
           mupen64plus-sa-core mupen64plus-sa-rsp-hle mupen64plus-sa-rsp-cxd4 mupen64plus-sa-video-glide64mk2 \
           mupen64plus-sa-video-gliden64 lzdoom gzdoom ecwolf amiberry raze"
@@ -44,13 +44,13 @@ case "${DEVICE}" in
     PKG_DEPENDS_TARGET+=" common-shaders glsl-shaders drastic dolphin-sa scummvm"
   ;;
   handheld)
-    PKG_EMUS+=" duckstation-sa dolphin-sa cemu citra-sa melonds-sa minivmacsa mupen64plus-sa pcsx2-sa          \
+    PKG_EMUS+=" duckstation-sa dolphin-sa cemu-sa citra-sa melonds-sa minivmacsa mupen64plus-sa pcsx2-sa          \
                primehack rpcs3-sa ryujinx-sa xemu-sa yuzu-sa"
     LIBRETRO_CORES+=" beetle-psx-lr bsnes-hd-lr citra-lr desmume-lr dolphin-lr lrps2-lr mame-lr minivmac-lr    \
                      play-lr"
   ;;
   RK3588)
-    PKG_EMUS+=" aethersx2-sa duckstation-sa dolphin mame pcsx_rearmed-lr box86 box64 yabasanshiroSA"
+    PKG_EMUS+=" aethersx2-sa duckstation-sa dolphin mame pcsx_rearmed-lr box86 box64"
     LIBRETRO_CORES+=" beetle-psx-lr bsnes-hd-lr dolphin-lr"
   ;;
   RK3566)
