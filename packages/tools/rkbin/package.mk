@@ -14,7 +14,7 @@ case "${DEVICE}" in
     PKG_VERSION="73945d35fd3a7fe1c7037209e36dd5a0b32c5560"
   ;;
   RK3588|RK3566)
-    PKG_SITE="https://github.com/radxa/rkbin"
+    PKG_SITE="https://github.com/JustEnoughLinuxOS/rkbin"
     PKG_VERSION="9840e87723eef7c41235b89af8c049c1bcd3d133"
   ;;
 esac
