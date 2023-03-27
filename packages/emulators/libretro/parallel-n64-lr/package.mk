@@ -31,7 +31,7 @@ case ${DEVICE} in
   RG552)
     PKG_MAKE_OPTS_TARGET=" platform=unix_RK3399"
   ;;
-  RK35*)
+  RK35*|OGU)
     PKG_MAKE_OPTS_TARGET=" platform=${DEVICE}"
   ;;
 esac
