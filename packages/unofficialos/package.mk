@@ -20,15 +20,17 @@ PKG_BASEOS="plymouth-lite grep wget util-linux xmlstarlet gnupg gzip patchelf im
 
 PKG_UI="emulationstation es-themes"
 
+PKG_UI_TOOLS="351files"
+
 PKG_SOFTWARE=""
 
 PKG_COMPAT="lib32"
 
 PKG_MULTIMEDIA="ffmpeg vlc mpv"
 
-PKG_NETWORK=" network synctools"
+PKG_NETWORK="network synctools pygobject"
 
-PKG_TOOLS="i2c-tools jslisten evtest 351files"
+PKG_TOOLS="i2c-tools evtest jslisten"
 
 ### Project specific variables
 case "${PROJECT}" in
@@ -48,7 +50,7 @@ if [ ! -z "${BASE_ONLY}" ]
 then
   PKG_DEPENDS_TARGET+=" ${PKG_BASEOS} ${PKG_TOOLS} ${PKG_UI}"
 else
-  PKG_DEPENDS_TARGET+=" ${PKG_BASEOS} ${PKG_NETWORK} ${PKG_TOOLS} ${PKG_UI} ${PKG_COMPAT} ${PKG_MULTIMEDIA} ${PKG_SOFTWARE}"
+  PKG_DEPENDS_TARGET+=" ${PKG_BASEOS} ${PKG_NETWORK} ${PKG_TOOLS} ${PKG_UI} ${PKG_UI_TOOLS} ${PKG_COMPAT} ${PKG_MULTIMEDIA} ${PKG_SOFTWARE}"
 fi
 
 make_target() {
