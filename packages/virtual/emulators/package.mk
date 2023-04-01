@@ -8,7 +8,7 @@ PKG_SECTION="virtual"
 PKG_LONGDESC="Emulation metapackage."
 
 PKG_EMUS="hatarisa openbor moonlight hypseus hypseus-singe pico-8 flycast-sa   \
-          scummvmsa PPSSPPSDL yabasanshiro-sa vicesa mupen64plus-sa-audio-sdl         \
+          scummvmsa ppsspp-sa yabasanshiro-sa vice-sa mupen64plus-sa-audio-sdl         \
           mupen64plus-sa-input-sdl mupen64plus-sa-ui-console mupen64plus-sa-video-rice \
           mupen64plus-sa-core mupen64plus-sa-rsp-hle mupen64plus-sa-rsp-cxd4 mupen64plus-sa-video-glide64mk2 \
           mupen64plus-sa-video-gliden64 lzdoom gzdoom ecwolf amiberry raze"
@@ -27,7 +27,7 @@ LIBRETRO_CORES="2048-lr 81-lr a5200-lr atari800-lr beetle-gba-lr beetle-lynx-lr 
                 pcsx_rearmed-lr picodrive-lr pokemini-lr potator-lr                                              \
                 ppsspp-lr prboom-lr prosystem-lr puae-lr px68k-lr quasi88-lr quicknes-lr race-lr reminiscence-lr sameboy-lr        \
                 sameduck-lr smsplus-gx-lr snes9x-lr snes9x2002-lr snes9x2005_plus-lr snes9x2010-lr stella-lr      \
-                stella-2014-lr swanstation-lr tgbdual-lr TIC-80-lr tyrquake-lr xrick-lr uae4arm uzem-lr vba-next-lr vbam-lr     \
+                stella-2014-lr swanstation-lr tgbdual-lr tic-80-lr tyrquake-lr xrick-lr uae4arm uzem-lr vba-next-lr vbam-lr     \
                 vecx-lr vice-lr yabasanshiro-lr xmil-lr mesen-lr virtualjaguar-lr ecwolf_libretro vitaquake2           \
                 bsnes-mercury-performance-lr duckstation-lr fake08-lr"
 

@@ -315,9 +315,9 @@ then
                         fi
                 ;;
                 "psp")
-                        jslisten set "-9 PPSSPPSDL"
-                        if [ "$EMU" = "PPSSPPSDL" ]; then
-                        RUNTHIS='${TBASH} /usr/bin/start_PPSSPPSDL.sh "${ROMNAME}"'
+                        jslisten set "-9 ppsspp"
+                        if [ "$EMU" = "ppsspp" ]; then
+                        RUNTHIS='${TBASH} /usr/bin/start_ppsspp.sh "${ROMNAME}"'
                         fi
                 ;;
                 "gamecube")
