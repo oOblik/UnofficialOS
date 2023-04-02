@@ -49,7 +49,7 @@ pre_configure_target() {
     RG351P|RG351V|RG351MP|RG353P|RG503|RG552|RGB20S)
       PKG_MAKE_OPTS_TARGET+=" -C yabause/src/libretro platform=rockpro64 HAVE_NEON=0 FORCE_GLES=1"
     ;;
-    RK35*|OGU)
+    RK35*|S922X)
       PKG_MAKE_OPTS_TARGET+=" -C yabause/src/libretro platform=rockpro64 HAVE_NEON=0 FORCE_GLES=1"
     ;;
     *)
