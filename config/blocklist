@@ -1,10 +1,11 @@
 ppsspp-sa # Manage PPSSPP manually for now
+ppsspp # Manage the libretro core manually as well.
 np2kai # Last major commit before hiatus is broken
-vice # Doesn't support updating with the script.
+vice-sa # Doesn't support updating with the script.
 duckstation-sa # Latest commits break device patching. Need to research.
 ecwolf
 raze
 dolphin-sa # Wayland patch is now broken upstream
-melonds-sa # Needs patch updates
-citra-sa-vulkan # Needs build fixes
-duckstation-lr #Libretro Support gone upstream
+melonds-sa # Needs patch updates.
+citra-sa-vulkan # Needs build fixes.
+duckstation-lr #Libretro Support gone upstream.
