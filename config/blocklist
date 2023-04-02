@@ -1,3 +1,4 @@
+ppsspp-sa # Manage PPSSPP manually for now
 np2kai # Last major commit before hiatus is broken
 vice # Doesn't support updating with the script.
 duckstation-sa # Latest commits break device patching. Need to research.
