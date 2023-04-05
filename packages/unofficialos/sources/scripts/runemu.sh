@@ -316,7 +316,7 @@ then
                 ;;
                 "psp")
                         jslisten set "-9 ppsspp"
-                        if [ "$EMU" = "ppsspp" ]; then
+                        if [ "$EMU" = "ppsspp-sa" ]; then
                         RUNTHIS='${TBASH} /usr/bin/start_ppsspp.sh "${ROMNAME}"'
                         fi
                 ;;
