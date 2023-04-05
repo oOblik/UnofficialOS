@@ -50,13 +50,16 @@ case "${DEVICE}" in
                      play-lr"
   ;;
   RK3588)
-    PKG_EMUS+=" aethersx2-sa duckstation-sa dolphin mame pcsx_rearmed-lr box86 box64"
+    [ "${ENABLE_32BIT}" == "true" ] && PKG_EMUS+=" box86"
+    PKG_EMUS+=" aethersx2-sa duckstation-sa dolphin mame pcsx_rearmed-lr box64"
     LIBRETRO_CORES+=" beetle-psx-lr bsnes-hd-lr dolphin-lr"
   ;;
   RK3566)
-    PKG_DEPENDS_TARGET+=" common-shaders glsl-shaders drastic dolphin-sa scummvm box86 box64"
+    [ "${ENABLE_32BIT}" == "true" ] && PKG_EMUS+=" box86"
+    PKG_DEPENDS_TARGET+=" common-shaders glsl-shaders drastic dolphin-sa scummvm box64"
   ;;
   S922X)
+    [ "${ENABLE_32BIT}" == "true" ] && PKG_EMUS+=" box86"
     PKG_EMUS+=" aethersx2-sa dolphin-sa duckstation-sa mupen64plus-sa yabasanshiro-sa box64"
     LIBRETRO_CORES+=" beetle-psx-lr bsnes-hd-lr dolphin-lr pcsx_rearmed-lr yabasanshiro-sa"
 esac
