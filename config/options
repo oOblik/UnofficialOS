@@ -30,6 +30,9 @@ PROJECT="${PROJECT:-Rockchip}"
 ARCH="${ARCH:-aarch64}"
 TARGET_ARCH="${ARCH}"
 
+# determines the default device, if not forced by user
+DEVICE="${DEVICE:-RG353P}"
+
 # include helper functions
 . config/functions
 
