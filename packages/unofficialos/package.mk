@@ -128,7 +128,7 @@ EOF
   fi
   
   cp ${PKG_DIR}/sources/asound/asound.conf.bluealsa ${INSTALL}/usr/config/
-
+  
   sed -i "s#@DEVICENAME@#${DEVICE}#g" ${INSTALL}/usr/config/system/configs/system.cfg
 
   if [[ "${DEVICE}" =~ RG351P ]] || [[ "${DEVICE}" =~ RGB20S ]]
