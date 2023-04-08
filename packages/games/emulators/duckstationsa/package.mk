@@ -11,7 +11,7 @@ PKG_TOOLCHAIN="cmake"
 
 case ${DEVICE} in
   RG552|handheld|RK3588)
-    PKG_VERSION="06d6447e59f208f21ba42f4df1665b789db13fb7"
+    PKG_VERSION="6a7407565a61fb470a495cc98068db729b8f1e4f"
     PKG_PATCH_DIRS+=" wayland"
   ;;
   *)

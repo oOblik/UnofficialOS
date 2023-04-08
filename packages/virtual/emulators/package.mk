@@ -13,7 +13,8 @@ PKG_EMUS="hatarisa openbor hypseus-singe moonlight hypseus-singe pico-8 flycasts
           mupen64plussa-core mupen64plussa-rsp-hle mupen64plussa-rsp-cxd4 mupen64plussa-video-glide64mk2 \
           mupen64plussa-video-gliden64 lzdoom gzdoom ecwolf amiberry raze"
 
-PKG_RETROARCH="retroarch retroarch-overlays retroarch-joypads retroarch-assets libretro-database core-info"
+PKG_RETROARCH="core-info libretro-database retroarch retroarch-assets retroarch-joypads                  \
+              retroarch-overlays slang-shaders"
 
 LIBRETRO_CORES="2048 81 a5200 atari800 beetle-gba beetle-lynx beetle-ngp beetle-pce beetle-pce-fast beetle-pcfx      \
                 beetle-supafaust beetle-supergrafx beetle-vb beetle-wswan bluemsx cannonball cap32   \
@@ -47,6 +48,6 @@ case "${DEVICE}" in
     PKG_DEPENDS_TARGET+=" bsnes-hd duckstationsa dolphinsa dolphin pcsx2sa lrps2 desmume bsnes citra slang-shaders minivmac minivmacsa play beetle-saturn yuzusa primehack citrasa ppsspp scummvm"
   ;;
   RK3588)
-    PKG_DEPENDS_TARGET+=" duckstationsa dolphinsa dolphin bsnes slang-shaders beetle-saturn"
+    PKG_DEPENDS_TARGET+=""
   ;;
 esac
