@@ -130,5 +130,5 @@ fi
 # mount $BOOT_ROOT r/o
   sync
   mount -o remount,ro $BOOT_ROOT &>/dev/null
-  
+
 sync
