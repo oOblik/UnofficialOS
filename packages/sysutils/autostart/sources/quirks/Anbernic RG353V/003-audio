@@ -33,18 +33,9 @@ pcm.ddmix {
 
 pcm.softvol {
         type            softvol
-        slave.pcm {
-        type asym
-        playback.pcm {
-            type route
-            slave.pcm "ddmix"
-            ttable.0.0 0.96
-            ttable.0.1 0.80
-            ttable.1.0 0.80
-            ttable.1.1 0.96
+        slave {
+                pcm         "ddmix"
         }
-        capture.pcm "hw:0"
-    }
         control {
                 name        "Master"
                 card        0
