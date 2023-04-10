@@ -1,6 +1,6 @@
 [Unit]
 Description=Bluetooth Sense
-Before=jelos.target
+Before=unofficialos.target
 
 [Service]
 Environment=HOME=/storage

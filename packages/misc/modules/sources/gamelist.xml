@@ -40,18 +40,18 @@
 		<image>./downloaded_images/rclone-back.png</image>
 	</game>
 
-        <game>
-                <path>./Install UnofficialOS.sh</path>
-                <name>Install UnofficialOS</name>
-                <desc>Install UnofficialOS to local storage</desc>
-                <developer>UnofficialOS</developer>
-                <publisher>UnofficialOS</publisher>
-                <rating>1.0</rating>
-                <releasedate>2022</releasedate>
-                <genre>Script</genre>
-                <thumbnail>./downloaded_images/unofficialos-thumb.png</thumbnail>
-                <image>./downloaded_images/unofficialos-image.png</image>
-        </game>
+	<game>
+			<path>./Install UnofficialOS.sh</path>
+			<name>Install UnofficialOS</name>
+			<desc>Install UnofficialOS to local storage</desc>
+			<developer>UnofficialOS</developer>
+			<publisher>UnofficialOS</publisher>
+			<rating>1.0</rating>
+			<releasedate>2022</releasedate>
+			<genre>Script</genre>
+			<thumbnail>./downloaded_images/unofficialos-thumb.png</thumbnail>
+			<image>./downloaded_images/unofficialos-image.png</image>
+	</game>
 	
 	<game>
 		<path>./PortMaster.sh</path>
@@ -91,20 +91,6 @@
 		<thumbnail>./downloaded_images/scummvm-thumb.png</thumbnail>
 		<image>./downloaded_images/scummvm.png</image>
 	</game>
-
-        <game>
-                <path>./Start 32bit Retroarch.sh</path>
-                <name>Start 32bit RetroArch</name>
-                <desc>Run 32bit RetroArch</desc>
-                <developer>JELOS</developer>
-                <publisher>JELOS</publisher>
-                <rating>1.0</rating>
-                <releasedate>2021</releasedate>
-                <genre>Script</genre>
-                <thumbnail>./downloaded_images/retroarch32-thumb.png</thumbnail>
-                <image>./downloaded_images/retroarch32.png</image>
-        </game>
-
 	<game>
 		<path>./Start 32bit Retroarch.sh</path>
 		<name>Start 32bit RetroArch</name>
